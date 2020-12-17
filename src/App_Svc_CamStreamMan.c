@@ -52,7 +52,7 @@ const HAPUInt8TLVFormat audioCodecParamsAudioChannelsFormat = {
     .callbacks = { .getDescription = NULL }
 };
 const HAPStructTLVMember audioCodecParamsAudioChannelsMember = {
-    .valueOffset = HAP_OFFSETOF(supportedAudioConfigStruct, audioCodecConfig.audioCodecParams.audioChannels),
+    .valueOffset = HAP_OFFSETOF(audioCodecParamsStruct, audioChannels),
     .isSetOffset = 0,
     .tlvType = 1,
     .debugDescription = "Audio Codec Config Params Audio Channels",
@@ -67,7 +67,7 @@ const HAPUInt8TLVFormat audioCodecParamsBitRateFormat = {
     .callbacks = { .getDescription = NULL }
 };
 const HAPStructTLVMember audioCodecParamsBitRateMember = {
-    .valueOffset = HAP_OFFSETOF(supportedAudioConfigStruct, audioCodecConfig.audioCodecParams.bitRate),
+    .valueOffset = HAP_OFFSETOF(audioCodecParamsStruct, bitRate),
     .isSetOffset = 0,
     .tlvType = 2,
     .debugDescription = "Audio Codec Config Params Bit-Rate",
@@ -82,7 +82,7 @@ const HAPUInt8TLVFormat audioCodecParamsSampleRateFormat = {
     .callbacks = { .getDescription = NULL }
 };
 const HAPStructTLVMember audioCodecParamsSampleRateMember = {
-    .valueOffset = HAP_OFFSETOF(supportedAudioConfigStruct, audioCodecConfig.audioCodecParams.sampleRate),
+    .valueOffset = HAP_OFFSETOF(audioCodecParamsStruct, sampleRate),
     .isSetOffset = 0,
     .tlvType = 3,
     .debugDescription = "Audio Codec Config Params Sample Rate",
@@ -99,7 +99,7 @@ const HAPUInt16TLVFormat audioCodecTypeFormat = {
     .callbacks = { .getDescription = NULL }
 };
 const HAPStructTLVMember audioCodecTypeMember = {
-    .valueOffset = HAP_OFFSETOF(supportedAudioConfigStruct, audioCodecConfig.audioCodecType),
+    .valueOffset = HAP_OFFSETOF(audioCodecConfigStruct, audioCodecType),
     .isSetOffset = 0,
     .tlvType = 1,
     .debugDescription = "Audio Codec Type",
@@ -119,7 +119,7 @@ const AudioCodecConfigFormat audioCodecParamsFormat = {
     .callbacks = { .isValid = isValid }
 };
 const HAPStructTLVMember audioCodecParamsMember = {
-    .valueOffset = HAP_OFFSETOF(supportedAudioConfigStruct, audioCodecConfig.audioCodecParams),
+    .valueOffset = HAP_OFFSETOF(audioCodecConfigStruct, audioCodecParams),
     .isSetOffset = 0,
     .tlvType = 2,
     .debugDescription = "Audio Codec Parameters",
@@ -231,7 +231,7 @@ const HAPUInt8TLVFormat videoCodecParamsProfileIDFormat = {
     .callbacks = { .getDescription = NULL }
 };
 const HAPStructTLVMember videoCodecParamsProfileIDMember = {
-    .valueOffset = HAP_OFFSETOF(supportedVideoConfigStruct, videoCodecConfig.videoCodecParams.profileID),
+    .valueOffset = HAP_OFFSETOF(videoCodecParamsStruct, profileID),
     .isSetOffset = 0,
     .tlvType = 1,
     .debugDescription = "Video Codec Config Params Profile ID",
@@ -246,7 +246,7 @@ const HAPUInt8TLVFormat videoCodecParamsLevelFormat = {
     .callbacks = { .getDescription = NULL }
 };
 const HAPStructTLVMember videoCodecParamsLevelMember = {
-    .valueOffset = HAP_OFFSETOF(supportedVideoConfigStruct, videoCodecConfig.videoCodecParams.level),
+    .valueOffset = HAP_OFFSETOF(videoCodecParamsStruct, level),
     .isSetOffset = 0,
     .tlvType = 2,
     .debugDescription = "Video Codec Config Params Level",
@@ -261,7 +261,7 @@ const HAPUInt8TLVFormat videoCodecParamsPacketizationModeFormat = {
     .callbacks = { .getDescription = NULL }
 };
 const HAPStructTLVMember videoCodecParamsPacketizationModeMember = {
-    .valueOffset = HAP_OFFSETOF(supportedVideoConfigStruct, videoCodecConfig.videoCodecParams.packetizationMode),
+    .valueOffset = HAP_OFFSETOF(videoCodecParamsStruct, packetizationMode),
     .isSetOffset = 0,
     .tlvType = 3,
     .debugDescription = "Video Codec Config Packetization Mode",
@@ -278,7 +278,7 @@ const HAPUInt8TLVFormat videoCodecTypeFormat = {
     .callbacks = { .getDescription = NULL }
 };
 const HAPStructTLVMember videoCodecTypeMember = {
-    .valueOffset = HAP_OFFSETOF(supportedVideoConfigStruct, videoCodecConfig.videoCodecType),
+    .valueOffset = HAP_OFFSETOF(videoCodecConfigStruct, videoCodecType),
     .isSetOffset = 0,
     .tlvType = 1,
     .debugDescription = "Video Codec Type",
@@ -298,7 +298,7 @@ const VideoCodecConfigFormat videoCodecParamsFormat = {
     .callbacks = { .isValid = isValid }
 };
 const HAPStructTLVMember videoCodecParamsMember = {
-    .valueOffset = HAP_OFFSETOF(supportedVideoConfigStruct, videoCodecConfig.videoCodecParams),
+    .valueOffset = HAP_OFFSETOF(videoCodecConfigStruct, videoCodecParams),
     .isSetOffset = 0,
     .tlvType = 2,
     .debugDescription = "Video Codec Parameters",
@@ -315,7 +315,7 @@ const HAPUInt16TLVFormat videoAttributesImageWidthFormat = {
     .callbacks = { .getDescription = NULL }
 };
 const HAPStructTLVMember videoAttributesImageWidthMember = {
-    .valueOffset = HAP_OFFSETOF(supportedVideoConfigStruct, videoCodecConfig.videoAttributes.imageWidth),
+    .valueOffset = HAP_OFFSETOF(videoAttributesStruct, imageWidth),
     .isSetOffset = 0,
     .tlvType = 1,
     .debugDescription = "Video Attributes Image Width",
@@ -330,7 +330,7 @@ const HAPUInt16TLVFormat videoAttributesImageHeightFormat = {
     .callbacks = { .getDescription = NULL }
 };
 const HAPStructTLVMember videoAttributesImageHeightMember = {
-    .valueOffset = HAP_OFFSETOF(supportedVideoConfigStruct, videoCodecConfig.videoAttributes.imageHeight),
+    .valueOffset = HAP_OFFSETOF(videoAttributesStruct, imageHeight),
     .isSetOffset = 0,
     .tlvType = 2,
     .debugDescription = "Video Attributes Image Height",
@@ -345,7 +345,7 @@ const HAPUInt8TLVFormat videoAttributesFrameRateFormat = {
     .callbacks = { .getDescription = NULL }
 };
 const HAPStructTLVMember videoAttributesFrameRateMember = {
-    .valueOffset = HAP_OFFSETOF(supportedVideoConfigStruct, videoCodecConfig.videoAttributes.frameRate),
+    .valueOffset = HAP_OFFSETOF(videoAttributesStruct, frameRate),
     .isSetOffset = 0,
     .tlvType = 3,
     .debugDescription = "Video Attributes Frame Rate",
@@ -363,7 +363,7 @@ const VideoAttributesFormat videoAttributesFormat = {
     .callbacks = { .isValid = isValid }
 };
 const HAPStructTLVMember videoAttributesMember = {
-    .valueOffset = HAP_OFFSETOF(supportedVideoConfigStruct, videoCodecConfig.videoAttributes),
+    .valueOffset = HAP_OFFSETOF(videoCodecConfigStruct, videoAttributes),
     .isSetOffset = 0,
     .tlvType = 3,
     .debugDescription = "Video Attributes",
